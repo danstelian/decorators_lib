@@ -1,4 +1,5 @@
-from decorators_lib import decolib
+# from decorators_lib import decolib
+import decolib
 
 
 reps = list(range(10000))
