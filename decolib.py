@@ -38,3 +38,20 @@ def timeit(reps=1):
         return wrapper
 
     return decorateit
+
+
+def clock(func):
+
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+        t0 = timer()
+        result = func(*args, **kwargs)
+        elapsed = timer() - t0
+
+        name = func.__name__
+        ret_str = f'{name}: TIME:[{elapsed:.8f}s] -> RESULT:[{result}]'
+        print(ret_str)
+
+        return result
+
+    return wrapper
